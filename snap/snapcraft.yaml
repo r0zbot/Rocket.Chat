@@ -81,7 +81,8 @@ parts:
             - lib
     scripts:
         plugin: dump
-        source: resources/
+        source: ./resources/
+        source-type: local
         organize:
             backupdb: bin/backupdb
             restoredb: bin/restoredb
