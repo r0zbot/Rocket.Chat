@@ -44,7 +44,7 @@ hooks:
 parts:
     node:
         plugin: dump
-        override-build: ./resources/preparenode
+        prepare: ./resources/preparenode
         build-packages:
             # For fibers
             - python
@@ -54,7 +54,7 @@ parts:
         build-packages:
             - curl
         plugin: dump
-        override-build: ./resources/prepareRocketChat
+        prepare: ./resources/prepareRocketChat
         after: [node]
         source: .
         stage-packages:
@@ -71,7 +71,7 @@ parts:
         build-packages:
             - wget
         source: ./
-        override-build: ./resources/preparemongo
+        prepare: ./resources/preparemongo
         plugin: dump
         stage-packages:
             - libssl1.0.0
@@ -93,7 +93,7 @@ parts:
         prime:
             - bin
     caddy:
-        override-build: ./resources/preparecaddy
+        prepare: ./resources/preparecaddy
         plugin: dump
         source: ./
         prime:
